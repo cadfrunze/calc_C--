@@ -64,7 +64,7 @@ void main() {
 		calculator["^"] = laPutere(num1, num2);
 		// Rezultatul
 		system("CLS");
-		cout << "Rezultatul este: " << num1 << " " << operatorul << " " << num2 << " " << "=" << " " << calculator[operatorul] << '\n';
+		cout << "Rezultatul pentru: " << num1 << " " << operatorul << " " << num2 << " este" << " =" << " " << calculator[operatorul] << '\n';
 	}
 
 
