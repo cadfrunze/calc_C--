@@ -1,4 +1,6 @@
 ﻿  main.cpp
-D:\probleme C++\calc_C--\testing\main.cpp(44,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  LINK : D:\probleme C++\calc_C--\x64\Debug\testing.exe not found or not built by the last incremental link; performing full link
+D:\probleme C++\calc_C--\testing\main.cpp(32,9): warning C4552: '*': result of expression not used
+D:\probleme C++\calc_C--\testing\main.cpp(35,9): warning C4552: '*': result of expression not used
+D:\probleme C++\calc_C--\testing\main.cpp(69,12): warning C4552: '*': result of expression not used
+D:\probleme C++\calc_C--\testing\main.cpp(72,12): warning C4552: '*': result of expression not used
   testing.vcxproj -> D:\probleme C++\calc_C--\x64\Debug\testing.exe

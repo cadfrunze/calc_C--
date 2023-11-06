@@ -1,72 +1,94 @@
 #include <iostream>
 #include <map>
 #include <string>
-#include <math.h>
+//#include <math.h>
 #include <stdlib.h>
+#include "header.h"
 using namespace std;
 
+/*
+* Programul va calcula o simpla operatie matematica intre doua numere intregi/zecimale, pozitive/negative
+*/
 
-double adunare(double n1, double n2) {
-	/*
-	functie adunare
-	*/
-	return n1 + n2;
-}
+int main() {
+	double num1, num2, rezultat; // valori pt calcul si variabila rezultat pt stocarea operatiei matematice
 
-double scadere(double n1, double n2) {
-	/*
-	functie scadere
-	*/
-	return n1 - n2;
-}
+	/* rasp_exit = variabila pt a continua sau iesi din program
+	   rasp_con = variabila pt continuarea unei operatii matematice
+	 */
+	string operatorul, rasp_exit, rasp_con = ""; // operatorul pt functia calculatorul, iar celelalte variabile pt continuarea sau iesirea din program
 
-double impartire(double n1, double n2) {
-	/*
-	functie scadere
-	*/
-	return n1 / n2;
-}	
-
-double inmultire(double n1, double n2) {
-	/*
-	functie inmultire
-	*/
-	return n1 * n2;
-}
-
-double laPutere(double n1, double n2) {
-	/*
-	functie la puterea
-	*/
-	return pow(n1, n2);
-}
-
-void main() {
-	double num1, num2;
-	string operatorul = "";
-	map <string, double> calculator;
-	
-	while (true){
+	while (true) // ^1
+	{
 		cout << "Primul numar din operatia matematica: ";
 		cin >> num1;
+		cout << "\"+\" = adunare\n\"-\" = scadere\n\"*\" sau \"x\" = inmultire\n\"/\" sau \":\" = impartire\n\"^\" sau \"**\" = la puterea" << endl;
 		cout << "Operatorul aritmetic: ";
 		cin >> operatorul;
-		cout << "Al doilea numar din operatia matematica: ";
+		cout << num1 << " " << operatorul << " (al doilea numar din operatia matematica): ";
 		cin >> num2;
-		// Setare calculator
-		calculator["+"] = adunare(num1, num2);
-		calculator["-"] = scadere(num1, num2);
-		calculator["/"] = impartire(num1, num2);
-		calculator[":"] = impartire(num1, num2);
-		calculator["*"] = inmultire(num1, num2);
-		calculator["x"] = inmultire(num1, num2);
-		calculator["**"] = laPutere(num1, num2);
-		calculator["^"] = laPutere(num1, num2);
-		// Rezultatul
-		system("CLS");
-		cout << "Rezultatul pentru: " << num1 << " " << operatorul << " " << num2 << " este" << " =" << " " << calculator[operatorul] << '\n';
-	}
 
+		if (num1 < 0) {
+			num1 * -1;
+		}
+		else if (num2 < 0) {
+			num2 * -1;
+		}
+		rezultat = calculatorul(operatorul, num1, num2);
+		system("CLS");
+		cout << num1 << " " << operatorul << " " << num2 << " = " << rezultat << endl;
+
+		// Stresarea userului v1.1
+		cout << "Doresti sa iesi din program?...raspunde cu: \"da\", \"d\", \"yes\",\"y\" sau \"nu\", \"n\", \"no\": ";
+		cin >> rasp_exit;
+		while ((rasp_exit != "da") && (rasp_exit != "d") && (rasp_exit != "yes") && (rasp_exit != "y") && (rasp_exit != "nu") && (rasp_exit != "n") && (rasp_exit != "no")) {
+			cout << "\nN-am inteles...raspunde cu: \"da\", \"d\", \"yes\",\"y\" sau \"nu\", \"n\", \"no\": ";
+			cin >> rasp_exit;
+		}
+		if ((rasp_exit == "da") || (rasp_exit == "d") || (rasp_exit == "yes") || (rasp_exit == "y")) // Iesire program 
+		{
+			break;
+		}
+		else // Continuarea programuluui
+		{
+			while (true) // ^2
+			{
+				system("CLS");
+				cout << "Doresti sa il calculezi in continuare pe " << rezultat << " ? ";
+				cin >> rasp_con;
+				if ((rasp_con == "da") || (rasp_con == "d") || (rasp_con == "yes") || (rasp_con == "y"))
+				{
+					// In continuare calcul cu variabila rezultat, num1 va lua valoarea lui rezultat si intoarcerea la a doua bucla while (true)
+					num1 = rezultat;
+					cout << "\"+\" = adunare\n\"-\" = scadere\n\"*\" sau \"x\" = inmultire\n\"/\" sau \":\" = impartire\n\"^\" sau \"**\" = la puterea" << endl;
+					cout << "Operatorul aritmetic: ";
+					cin >> operatorul;
+					cout << num1 << " " << operatorul << " (al doilea numar din operatia matematica): ";
+					cin >> num2;
+					if (num1 < 0) {
+						num1 * -1;
+					}
+					else if (num2 < 0) {
+						num2 * -1;
+					}
+					rezultat = calculatorul(operatorul, num1, num2);
+					cout << num1 << " " << operatorul << " " << num2 << " = " << rezultat << endl;
+				}
+				else if ((rasp_con == "nu") || (rasp_con == "n") || (rasp_con == "no"))
+				{
+					// Intoarcerea la prima bucla while conform cerintelor userului....
+					break;
+				}
+				// Stresarea userului v1.2
+				while ((rasp_con != "da") && (rasp_con != "d") && (rasp_con != "yes") && (rasp_con != "y") && (rasp_con != "nu") && (rasp_con != "n") && (rasp_con != "no")) {
+					cout << "\nN-am inteles...raspunde cu: \"da\", \"d\", \"yes\",\"y\" sau \"nu\", \"n\", \"no\": ";
+					cin >> rasp_con;
+				}
+			}
+		}
+		
+	}
+	return 0;
 
  
 }

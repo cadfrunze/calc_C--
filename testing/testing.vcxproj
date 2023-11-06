@@ -127,7 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="calculatorul.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="operatiiMatematice.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="testing.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
