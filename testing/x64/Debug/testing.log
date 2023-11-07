@@ -1,6 +1,6 @@
 ﻿  main.cpp
 D:\probleme C++\calc_C--\testing\main.cpp(32,9): warning C4552: '*': result of expression not used
 D:\probleme C++\calc_C--\testing\main.cpp(35,9): warning C4552: '*': result of expression not used
-D:\probleme C++\calc_C--\testing\main.cpp(69,12): warning C4552: '*': result of expression not used
-D:\probleme C++\calc_C--\testing\main.cpp(72,12): warning C4552: '*': result of expression not used
+D:\probleme C++\calc_C--\testing\main.cpp(71,12): warning C4552: '*': result of expression not used
+D:\probleme C++\calc_C--\testing\main.cpp(74,12): warning C4552: '*': result of expression not used
   testing.vcxproj -> D:\probleme C++\calc_C--\x64\Debug\testing.exe

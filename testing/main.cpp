@@ -1,7 +1,7 @@
 #include <iostream>
 #include <map>
 #include <string>
-//#include <math.h>
+#include <math.h>
 #include <stdlib.h>
 #include "header.h"
 using namespace std;
@@ -34,12 +34,14 @@ int main() {
 		else if (num2 < 0) {
 			num2 * -1;
 		}
+		cout << num1;
 		rezultat = calculatorul(operatorul, num1, num2);
 		system("CLS");
 		cout << num1 << " " << operatorul << " " << num2 << " = " << rezultat << endl;
 
 		// Stresarea userului v1.1
 		cout << "Doresti sa iesi din program?...raspunde cu: \"da\", \"d\", \"yes\",\"y\" sau \"nu\", \"n\", \"no\": ";
+		//cout << num1 << " " << num2;
 		cin >> rasp_exit;
 		while ((rasp_exit != "da") && (rasp_exit != "d") && (rasp_exit != "yes") && (rasp_exit != "y") && (rasp_exit != "nu") && (rasp_exit != "n") && (rasp_exit != "no")) {
 			cout << "\nN-am inteles...raspunde cu: \"da\", \"d\", \"yes\",\"y\" sau \"nu\", \"n\", \"no\": ";
